@@ -1,5 +1,9 @@
 <new-ad></new-ad>
 <h1>Ads</h1>
-<div ng-repeat="ad in $ctrl.ads">
+<form>
+  <label for="filter">Filter: </label>
+  <input name="filter" ng-model="$ctrl.filter" type="text">
+</form>
+<div ng-repeat="ad in $ctrl.ads | filter:$ctrl.filter">
   <ad ad-data="ad"></ad>
 </div>
