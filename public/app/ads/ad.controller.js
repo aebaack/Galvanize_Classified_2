@@ -10,7 +10,13 @@
       templateUrl: 'app/ads/ad.template.html'
     });
 
-  function AdController() {
+  AdController.$inject = ['adService'];
+
+  function AdController(adService) {
     const vm = this;
+
+    vm.deleteAd = function() {
+      adService.deleteAd(vm.adData.id);
+    };
   }
 }());

@@ -20,5 +20,12 @@
           this.ads.push(response.data);
         });
     };
+
+    this.deleteAd = function(index) {
+      return $http.delete(`/classifieds/${index}`)
+        .then((response) => {
+          this.ads.splice(index - 1, 1);
+        });
+    };
   }
 }());
