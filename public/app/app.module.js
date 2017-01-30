@@ -1,5 +1,5 @@
 (function() {
   'use strict';
 
-  angular.module('classifieds', []);
+  angular.module('classifieds', ['angularMoment']);
 }());

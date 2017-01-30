@@ -1,7 +1,10 @@
 <h1>{{$ctrl.adData.title}}</h1>
 <p><strong>{{$ctrl.adData.price | currency}}</strong></p>
 <img src="{{$ctrl.adData.item_image}}"></img>
-<p>{{$ctrl.adData.description}}</p><br>
+<p>{{$ctrl.adData.description}}</p>
+<p>{{$ctrl.adData.created_at}}</p>
+<span am-time-ago="$ctrl.adData.created_at"></span>
+<br>
 
 <button ng-click="$ctrl.showEditForm()">Edit</button><br>
 <div ng-if="$ctrl.showEdit">

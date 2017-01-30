@@ -14,6 +14,8 @@ const messages = require('./routes/classifieds');
 
 app.use(express.static('public'));
 app.use('/angular', express.static('node_modules/angular'));
+app.use('/angular-moment', express.static('node_modules/angular-moment'));
+app.use('/moment', express.static('node_modules/moment'));
 
 app.use('/classifieds',messages);
 
