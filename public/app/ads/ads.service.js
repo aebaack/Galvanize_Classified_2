@@ -21,6 +21,14 @@
         });
     };
 
+    this.editAd = function(adId, adEdits) {
+      return $http.patch(`/classifieds/${adId}`, adEdits)
+        .then((response) => {
+          const adIndex = this.ads.indexOf(this.ads.find(ad => ad.id === adId));
+          this.ads[adIndex] = response.data;
+        });
+    }
+
     this.deleteAd = function(adId) {
       return $http.delete(`/classifieds/${adId}`)
         .then((response) => {

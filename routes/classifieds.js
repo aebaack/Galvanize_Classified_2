@@ -90,7 +90,7 @@ router.patch('/:id', (req, res, next) => {
         }
         knex('classifieds')
           .where('classifieds.id', req.params.id)
-          .update(classifiedUpdate, ['id', 'title', 'description', 'price', 'item_image'])
+          .update(classifiedUpdate, ['id', 'title', 'description', 'price', 'item_image', 'created_at'])
           .then((updatedClassified) => {
             res.json(updatedClassified[0]);
           })
