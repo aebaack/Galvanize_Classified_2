@@ -7,7 +7,7 @@ const knex = require('../knex');
 
 router.get('/', (req, res, next) => {
   knex('classifieds')
-    .select(['id', 'title', 'description', 'price', 'item_image'])
+    .select(['id', 'title', 'description', 'price', 'item_image', 'created_at'])
     .then((classifieds) => {
       res.json(classifieds);
     })
@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   knex('classifieds')
-    .select(['id', 'title', 'description', 'price', 'item_image'])
+    .select(['id', 'title', 'description', 'price', 'item_image', 'created_at'])
     .where('classifieds.id', req.params.id)
     .then((classified) => {
       res.json(classified[0]);
@@ -45,7 +45,7 @@ router.post('/', (req, res, next) => {
 
   if (valuePresentForAllProperties) {
     knex('classifieds')
-      .insert(newClassified, ['id', 'title', 'description', 'price', 'item_image'])
+      .insert(newClassified, ['id', 'title', 'description', 'price', 'item_image', 'created_at'])
       .then((classified) => {
         res.json(classified[0]);
       })

@@ -11,7 +11,7 @@
 <select ng-model="$ctrl.orderBy" form="sorting">
   <option value="">None</option>
   <option value="price">Price</option>
-  <option value="updated_at">Posting Data</option>
+  <option value="created_at">Posting Date</option>
 </select>
 <div ng-repeat="ad in $ctrl.ads | filter:$ctrl.filter | orderBy:$ctrl.orderBy">
   <ad ad-data="ad"></ad>
