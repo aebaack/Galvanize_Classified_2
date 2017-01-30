@@ -7,8 +7,11 @@
       templateUrl: 'app/ads/ads.template.html'
     });
 
-    function AdsController() {
+    AdsController.$inject = ['adService'];
+
+    function AdsController(adService) {
       const vm = this;
+
     }
 
 }());
