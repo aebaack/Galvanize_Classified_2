@@ -1,9 +1,18 @@
 <new-ad></new-ad>
 <h1>Ads</h1>
-<form>
+
+<form id="sorting">
   <label for="filter">Filter: </label>
   <input name="filter" ng-model="$ctrl.filter" type="text">
+  <br>
+  <h2>Order By:</h2>
 </form>
-<div ng-repeat="ad in $ctrl.ads | filter:$ctrl.filter">
+
+<select ng-model="$ctrl.orderBy" form="sorting">
+  <option value="">None</option>
+  <option value="price">Price</option>
+  <option value="updated_at">Posting Data</option>
+</select>
+<div ng-repeat="ad in $ctrl.ads | filter:$ctrl.filter | orderBy:$ctrl.orderBy">
   <ad ad-data="ad"></ad>
 </div>
