@@ -13,5 +13,12 @@
           this.ads = response.data;
         });
     };
+
+    this.newAd = function(ad) {
+      return $http.post('/classifieds', ad)
+        .then((response) => {
+          this.ads.push(response.data);
+        });
+    };
   }
 }());
