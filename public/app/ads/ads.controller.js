@@ -12,6 +12,9 @@
     function AdsController(adService) {
       const vm = this;
 
+      vm.$onInit = function() {
+        adService.getAds()
+          .then(() => vm.ads = adService.ads);
+      };
     }
-
 }());
