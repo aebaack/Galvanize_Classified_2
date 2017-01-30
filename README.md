@@ -1,5 +1,7 @@
 # Galvanize Classified - Part 2
 
+# Heroku Deployment: https://g-classified-part2.herokuapp.com/
+
 ## Read the entire README before beginning. Commit often.
 
 ## Project Description
