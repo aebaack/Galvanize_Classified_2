@@ -15,7 +15,7 @@
 
     vm.submitNewAd = function(event) {
       event.preventDefault();
-      adService.newAd(vm.newAd)
+      adService.postAd(vm.newAd)
         .then(() => {
           delete vm.newAd;
         });

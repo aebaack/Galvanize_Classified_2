@@ -14,7 +14,7 @@
         });
     };
 
-    this.newAd = function(ad) {
+    this.postAd = function(ad) {
       return $http.post('/classifieds', ad)
         .then((response) => {
           this.ads.push(response.data);
