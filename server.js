@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const path = require('path');
 
 require('dotenv').config();
 
@@ -12,6 +13,8 @@ app.use(bodyParser.json());
 const messages = require('./routes/classifieds');
 
 app.use(express.static('public'));
+app.use('/angular', express.static('node_modules/angular'));
+
 app.use('/classifieds',messages);
 
 app.use((err, _req, res, _next) => {
