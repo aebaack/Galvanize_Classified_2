@@ -13,7 +13,8 @@
     const vm = this;
     vm.newAd = {};
 
-    vm.submitNewAd = function() {
+    vm.submitNewAd = function(event) {
+      event.preventDefault();
       adService.newAd(vm.newAd)
         .then(() => {
           delete vm.newAd;

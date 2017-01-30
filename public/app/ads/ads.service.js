@@ -21,10 +21,11 @@
         });
     };
 
-    this.deleteAd = function(index) {
-      return $http.delete(`/classifieds/${index}`)
+    this.deleteAd = function(adId) {
+      return $http.delete(`/classifieds/${adId}`)
         .then((response) => {
-          this.ads.splice(index - 1, 1);
+          const adIndex = this.ads.indexOf(this.ads.find(ad => ad.id === adId));
+          this.ads.splice(adIndex, 1);
         });
     };
   }
